@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <a href="/create"><input type="button" value="Create"></a>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Judul Tugas</td>
+            <td>Deskripsi Tugas</td>
+            <td>Deadline</td>
+            <td>Action</td>
+        </tr>
+        {% for data in data_data %}
+        <tr>
+            <td>{{ data.id}}</td>
+            <td>{{ data.judul_tugas }}</td>
+            <td>{{ data.deskripsi_tugas}}</td>
+            <td>{{ data.deadline}}</td>
+            <td>
+                <a href="/update/{{ data.id }}"><input type="button" value="Update"></a>
+                <a href="/delete/{{ data.id }}"><input type="button" value="Delete"></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
